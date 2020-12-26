@@ -13,7 +13,7 @@ export const AppDrawer = (props: PropsType) => {
         <div>
             <Drawer open={props.drawer} onBlur={props.hideDrawer}>
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                    {['Menu1', 'Menu2', 'Menu3', 'Menu4'].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                             <ListItemText primary={text} />

@@ -1,22 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
-import {Header} from "./CustomComponents/Header/Header";
-import {AppDrawer} from "./CustomComponents/Drawer/AppDrawer";
+import {AppContainer} from "./Components/AppContainer";
 
-function App() {
-    const [drawer, setDrawer] = useState(false)
-
-    const showDrawer = () => {
-        setDrawer(true)
-    }
-    const hideDrawer = () => {
-        setDrawer(false)
-    }
+const App = () =>  {
 
   return (
     <div className="App">
-      <Header showDrawer={showDrawer}/>
-      <AppDrawer drawer={drawer} hideDrawer={hideDrawer}/>
+        <AppContainer />
     </div>
   );
 }

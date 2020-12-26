@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import {Box} from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -18,6 +19,11 @@ const useStyles = makeStyles((theme: Theme) =>
         title: {
             flexGrow: 1,
         },
+        menu: {
+            flex: 1,
+            //flexDirection: 'row',
+            marginLeft: theme.spacing(1)
+        }
     }),
 );
 
@@ -32,12 +38,17 @@ export const Header = (props: PropsType) => {
             <AppBar position="static">
                 <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                        <MenuIcon onClick={()=> props.showDrawer()}/>
+                        <Box onClick={()=> props.showDrawer()} className={classes.menu}>
+                            {/*<MenuIcon />*/}
+                            <Typography variant="h6" >
+                                Menu
+                            </Typography>
+                        </Box>
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
                         Your Gallery
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    <Button color="inherit" variant="outlined">Login</Button>
                 </Toolbar>
             </AppBar>
         </div>
